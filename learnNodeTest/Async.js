@@ -1,7 +1,10 @@
 var fs =require('fs');
-var file = process.vargs[2];
+var file = process.argv[2];
 
-fs.readfile(file, doSomething(err, contents){
-console.log(contents);
+fs.readFile(file,function(err, contents){
+if(err) console.log("Error Output");
+var buf = contents.toString();
+var lines = buf.split('\n')
+console.log(lines.length -1);
 });
 
